@@ -14,7 +14,7 @@ public class StaffController {
     StaffService StaffService;
 
     /**
-     * Returns a list of all staff in the system.
+     * Returns a list of all staff in the IMS system
      */
     @GetMapping
     public List<Staff> getAllTeacher() {
