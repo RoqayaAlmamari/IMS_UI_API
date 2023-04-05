@@ -55,6 +55,7 @@ public class StaffService {
     }
 
     /**
+     *
      * Updates the details of a teacher with the specified ID.
      *
      * @param id             the ID of the teacher to update

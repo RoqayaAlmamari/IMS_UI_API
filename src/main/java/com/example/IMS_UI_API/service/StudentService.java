@@ -33,7 +33,7 @@ public class StudentService {
     public Student getStudent(int id) {
         Optional<Student> foundStudent = listOfStudent.stream().filter(
                 (student) -> {
-                    return student.getId() == id;
+                    return student.id == id;
                 }).findFirst();
 
         if (foundStudent.isPresent()) {
@@ -50,9 +50,9 @@ public class StudentService {
      * @return A Student object representing the newly registered student.
      */
     public Student registerStudent(Student student) {
-        student.getEmail();
+        student.id = this.currrentID++;
         listOfStudent.add(student);
-        logger.info("Created student with id: " + student.getId());
+        logger.info("Created student with id: " + student.id);
         return student;
     }
 
@@ -65,11 +65,10 @@ public class StudentService {
      */
     public Student updateStudent(int id, Student updatedStudent) {
         Student foundStudent = getStudent(id);
-        foundStudent.setFirstName( updatedStudent.getFirstName());
-        foundStudent.setLastName( updatedStudent.getLastName());
-        foundStudent.setEmail( updatedStudent.getEmail());
-        foundStudent.setPhone( updatedStudent.getPhone());
-        logger.info("Student with id: " + updatedStudent.getId() + "updated");
+        foundStudent.name = updatedStudent.name;
+        foundStudent.email = updatedStudent.email;
+        foundStudent.phone = updatedStudent.phone;
+        logger.info("Student with id: " + updatedStudent.id + "updated");
         return foundStudent;
     }
 
@@ -82,7 +81,7 @@ public class StudentService {
     public Student deleteStudent(int id) {
         Student foundStudent = getStudent(id);
         listOfStudent.remove(foundStudent);
-        logger.info("Student with id: " + foundStudent.getId() + " deleted");
+        logger.info("Student with id: " + foundStudent.id + " deleted");
         return foundStudent;
     }
 

@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/api/students")
 /**
+ *
  * This class represents the controller for managing the students of an institute.
  */
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -60,10 +61,10 @@ public class StudentController {
     @PutMapping(path = "/{id}")
     public Student updateStudent(@PathVariable(name = "id") int id, @RequestBody Student currentStudent) {
         Student updateStudent = studentService.getStudent(id);
-        updateStudent.setFirstName(currentStudent.getFirstName());
-        updateStudent.setLastName(currentStudent.getLastName());
-        updateStudent.setEmail(currentStudent.getEmail());
-        updateStudent.setPhone(currentStudent.getPhone());
+        updateStudent.name=currentStudent.name;
+        updateStudent.email=currentStudent.email;
+        updateStudent.phone=currentStudent.phone;
+
         return updateStudent;
     }
 

@@ -115,7 +115,7 @@ studentCreateForm.addEventListener('submit', (event) => {
   const studentName = document.querySelector('#student-name').value;
   const studentEmail = document.querySelector('#student-email').value;
 
-  fetch('http://localhost:8080/students', {
+  fetch('http://localhost:8080/api/students', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' ,
     'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
@@ -136,3 +136,142 @@ studentCreateForm.addEventListener('submit', (event) => {
   .then(data => console.log(data))
   .catch(error => console.error(error));
 });
+
+createBtn.addEventListener('click', () => {
+    studentCreateForm.style.display = 'block';
+    studentTable.parentElement.style.display = 'none';
+    studentUpdateForm.style.display = 'none';
+    deleteForm.style.display = 'none';
+});
+studentCreateForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const studentName = document.querySelector('#student-name').value;
+  const studentEmail = document.querySelector('#student-email').value;
+
+  fetch('http://localhost:8080/api/students', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' ,
+    'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
+    body: JSON.stringify({
+      name: studentName,
+      email: studentEmail
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('Student added successfully');
+      studentCreateForm.reset();
+    } else {
+      alert('An error occurred while adding the student');
+    }
+    return response.json();
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+});
+
+
+createBtn.addEventListener('click', () => {
+    studentCreateForm.style.display = 'block';
+    studentTable.parentElement.style.display = 'none';
+    studentUpdateForm.style.display = 'none';
+    deleteForm.style.display = 'none';
+});
+studentCreateForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const studentName = document.querySelector('#student-name').value;
+  const studentEmail = document.querySelector('#student-email').value;
+
+  fetch('http://localhost:8080/api/students', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' ,
+    'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
+    body: JSON.stringify({
+      name: studentName,
+      email: studentEmail
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('Student added successfully');
+      studentCreateForm.reset();
+    } else {
+      alert('An error occurred while adding the student');
+    }
+    return response.json();
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+});
+
+
+createBtn.addEventListener('click', () => {
+    studentCreateForm.style.display = 'block';
+    studentTable.parentElement.style.display = 'none';
+    studentUpdateForm.style.display = 'none';
+    deleteForm.style.display = 'none';
+});
+studentCreateForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const studentName = document.querySelector('#student-name').value;
+  const studentEmail = document.querySelector('#student-email').value;
+
+  fetch('http://localhost:8080/api/students', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' ,
+    'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
+    body: JSON.stringify({
+      name: studentName,
+      email: studentEmail
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('Student added successfully');
+      studentCreateForm.reset();
+    } else {
+      alert('An error occurred while adding the student');
+    }
+    return response.json();
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+});
+
+
+deleteBtn.addEventListener('click', () => {
+    studentCreateForm.style.display = 'none';
+    studentTable.parentElement.style.display = 'none';
+    studentUpdateForm.style.display = 'none';
+    deleteForm.style.display = 'block';
+});
+
+deleteForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const studentId = document.querySelector('#studentID').value;
+
+    const confirmDelete = confirm(`Are you sure you want to delete student with ID ${studentId}?`);
+    if (confirmDelete) {
+      fetch(`http://localhost:8080/api/students/${studentId}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' ,
+        'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
+      })
+        .then(response => {
+          if (response.ok) {
+            alert('Student deleted successfully');
+            deleteForm.reset();
+          } else {
+            throw new Error('Failed to delete student');
+          }
+        })
+        .catch(error => console.error(error));
+    }
+});
+
+
+
