@@ -29,249 +29,64 @@ passwordInput.addEventListener('input', function() {
   passwordError.textContent = '';
 });
 
+    const storedUsername = localStorage.getItem("username");
+    const storedPassword = localStorage.getItem("password");
 
-$(document).ready(function() {
-  // Import students button click
-  $('#importBtn').click(function() {
-    $.getJSON('students.json', function(data) {
-      $.each(data, function(index, student) {
-        // Append new row to table
-        $('tbody').append('<tr><td>' + (index + 1) + '</td><td>' + student.name + '</td><td>' + student.email + '</td><td>' + student.phone + '</td><td><button class="btn btn-info">Edit</button> <button class="btn btn-danger">Delete</button></td></tr>');
-      });
+    document.getElementById("addStudentForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+
+        const url = "http://localhost:8080/api/students";
+
+        const reqConfig = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;charset=UTF-8",
+                "Authorization": "Basic " + btoa(storedUsername + ":" + storedPassword)
+            },
+            body: JSON.stringify({
+                Studentname: name,
+                Studentemail: email,
+                Studentphone: phone
+            })
+        };
+
+        fetch(url, reqConfig)
+            .then((response) => {
+                if (response.ok) {
+                    alert(`Student created successfully.`);
+                } else {
+                    alert(`Failed to create student.`);
+                }
+            })
+            .then((parsedResponse) => {
+                console.log(parsedResponse);
+                document.getElementById("addStudentForm").reset();
+                $('#addStudentModal').modal('hide');
+            });
     });
-  });
+
+// Select the navbar element
+const navbar = document.querySelector('.navbar-nav');
+
+// Create a new li element for the logout button
+const logoutLi = document.createElement('li');
+logoutLi.classList.add('nav-item');
+
+// Create a new a element for the logout button
+const logoutLink = document.createElement('a');
+logoutLink.classList.add('nav-link');
+logoutLink.href = 'login.html';
+logoutLink.innerText = 'Logout';
+
+// Append the link to the li element and the li element to the navbar
+logoutLi.appendChild(logoutLink);
+navbar.appendChild(logoutLi);
+
+// Add a click event listener to the logout button
+logoutLink.addEventListener('click', function() {
+  // Perform logout actions here
 });
-
-
-// Event listener for form submit
-$("#addStudentForm").submit(function(event) {
-  event.preventDefault();
-
-  // Get the values from the form
-  var studentId = $("#studentId").val();
-  var studentName = $("#studentName").val();
-  var studentEmail = $("#studentEmail").val();
-  var studentPhone = $("#studentPhone").val();
-
-  // Add the student to the table
-  addStudentToTable(studentId, studentName, studentEmail, studentPhone);
-
-  // Clear the form
-  $("#addStudentForm")[0].reset();
-});
-
-// Event listener for file input change
-$("#fileInput").change(function(event) {
-  var file = event.target.files[0];
-
-  // Read the file contents
-  var reader = new FileReader();
-  reader.onload = function() {
-    var data = JSON.parse(reader.result);
-
-    // Loop through the data and add each student to the table
-    for (var i = 0; i < data.length; i++) {
-      var student = data[i];
-      addStudentToTable(student.id, student.name, student.email, student.phone);
-    }
-  };
-  reader.readAsText(file);
-});
-
-// Function to add a student to the table
-function addStudentToTable(id, name, email, phone) {
-  var tableRow = $("<tr></tr>");
-  tableRow.append("<td>" + id + "</td>");
-  tableRow.append("<td>" + name + "</td>");
-  tableRow.append("<td>" + email + "</td>");
-  tableRow.append("<td>" + phone + "</td>");
-  $("#studentTable tbody").append(tableRow);
-}
-
-const studentCreateForm = document.querySelector('#student-form');
-const studentUpdateForm = document.querySelector('#student-update-form')
-const deleteForm = document.querySelector('#student-form-delete');
-const studentFormContainer = document.querySelector('#student-form-container');
-const createBtn = document.querySelector('#create-btn');
-const getBtn = document.querySelector('#get-btn');
-const updateBtn = document.querySelector('#update-btn');
-const deleteBtn = document.querySelector('#delete-btn');
-const studentTable = document.querySelector('#student-table tbody');
-const studentIdInput = document.querySelector("#student-id");
-const studentIdLabel = document.querySelector("#student-id-label");
- // retrieve the stored username and password from the localStorage
-   const storedUsername = localStorage.getItem('username');
-   const storedPassword = localStorage.getItem('password');
-
-createBtn.addEventListener('click', () => {
-    studentCreateForm.style.display = 'block';
-    studentTable.parentElement.style.display = 'none';
-    studentUpdateForm.style.display = 'none';
-    deleteForm.style.display = 'none';
-});
-studentCreateForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const studentName = document.querySelector('#student-name').value;
-  const studentEmail = document.querySelector('#student-email').value;
-
-  fetch('http://localhost:8080/api/students', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' ,
-    'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
-    body: JSON.stringify({
-      name: studentName,
-      email: studentEmail
-    })
-  })
-  .then(response => {
-    if (response.ok) {
-      alert('Student added successfully');
-      studentCreateForm.reset();
-    } else {
-      alert('An error occurred while adding the student');
-    }
-    return response.json();
-  })
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
-});
-
-createBtn.addEventListener('click', () => {
-    studentCreateForm.style.display = 'block';
-    studentTable.parentElement.style.display = 'none';
-    studentUpdateForm.style.display = 'none';
-    deleteForm.style.display = 'none';
-});
-studentCreateForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const studentName = document.querySelector('#student-name').value;
-  const studentEmail = document.querySelector('#student-email').value;
-
-  fetch('http://localhost:8080/api/students', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' ,
-    'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
-    body: JSON.stringify({
-      name: studentName,
-      email: studentEmail
-    })
-  })
-  .then(response => {
-    if (response.ok) {
-      alert('Student added successfully');
-      studentCreateForm.reset();
-    } else {
-      alert('An error occurred while adding the student');
-    }
-    return response.json();
-  })
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
-});
-
-
-createBtn.addEventListener('click', () => {
-    studentCreateForm.style.display = 'block';
-    studentTable.parentElement.style.display = 'none';
-    studentUpdateForm.style.display = 'none';
-    deleteForm.style.display = 'none';
-});
-studentCreateForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const studentName = document.querySelector('#student-name').value;
-  const studentEmail = document.querySelector('#student-email').value;
-
-  fetch('http://localhost:8080/api/students', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' ,
-    'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
-    body: JSON.stringify({
-      name: studentName,
-      email: studentEmail
-    })
-  })
-  .then(response => {
-    if (response.ok) {
-      alert('Student added successfully');
-      studentCreateForm.reset();
-    } else {
-      alert('An error occurred while adding the student');
-    }
-    return response.json();
-  })
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
-});
-
-
-createBtn.addEventListener('click', () => {
-    studentCreateForm.style.display = 'block';
-    studentTable.parentElement.style.display = 'none';
-    studentUpdateForm.style.display = 'none';
-    deleteForm.style.display = 'none';
-});
-studentCreateForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const studentName = document.querySelector('#student-name').value;
-  const studentEmail = document.querySelector('#student-email').value;
-
-  fetch('http://localhost:8080/api/students', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' ,
-    'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
-    body: JSON.stringify({
-      name: studentName,
-      email: studentEmail
-    })
-  })
-  .then(response => {
-    if (response.ok) {
-      alert('Student added successfully');
-      studentCreateForm.reset();
-    } else {
-      alert('An error occurred while adding the student');
-    }
-    return response.json();
-  })
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
-});
-
-
-deleteBtn.addEventListener('click', () => {
-    studentCreateForm.style.display = 'none';
-    studentTable.parentElement.style.display = 'none';
-    studentUpdateForm.style.display = 'none';
-    deleteForm.style.display = 'block';
-});
-
-deleteForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const studentId = document.querySelector('#studentID').value;
-
-    const confirmDelete = confirm(`Are you sure you want to delete student with ID ${studentId}?`);
-    if (confirmDelete) {
-      fetch(`http://localhost:8080/api/students/${studentId}`, {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' ,
-        'Authorization': 'Basic ' + btoa(storedUsername + ":" + storedPassword)},
-      })
-        .then(response => {
-          if (response.ok) {
-            alert('Student deleted successfully');
-            deleteForm.reset();
-          } else {
-            throw new Error('Failed to delete student');
-          }
-        })
-        .catch(error => console.error(error));
-    }
-});
-
-
-

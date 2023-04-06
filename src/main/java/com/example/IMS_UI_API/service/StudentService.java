@@ -67,7 +67,6 @@ public class StudentService {
         Student foundStudent = getStudent(id);
         foundStudent.name = updatedStudent.name;
         foundStudent.email = updatedStudent.email;
-        foundStudent.phone = updatedStudent.phone;
         logger.info("Student with id: " + updatedStudent.id + "updated");
         return foundStudent;
     }

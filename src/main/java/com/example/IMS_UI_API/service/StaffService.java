@@ -55,7 +55,6 @@ public class StaffService {
     }
 
     /**
-     *
      * Updates the details of a teacher with the specified ID.
      *
      * @param id             the ID of the teacher to update
@@ -64,9 +63,7 @@ public class StaffService {
      */
     public Staff updateStaff(int id, Staff updatedStaff) {
         Staff foundStaff = getStaff(id);
-        foundStaff.name = updatedStaff.name;
-        foundStaff.email = updatedStaff.email;
-        foundStaff.phone = updatedStaff.phone;
+        foundStaff.name = updatedStaff.email;
         logger.info("teacher with id: " + updatedStaff.id + " updated.");
         return foundStaff;
     }

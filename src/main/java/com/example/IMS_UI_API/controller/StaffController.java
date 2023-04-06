@@ -1,4 +1,5 @@
 package com.example.IMS_UI_API.controller;
+
 import com.example.IMS_UI_API.model.Staff;
 import com.example.IMS_UI_API.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,15 +8,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/staff")
+@RequestMapping(path = "api/staff")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class StaffController {
     @Autowired
     StaffService StaffService;
 
     /**
-     *
-     * Returns a list of all staff in the IMS system
+     * Returns a list of all staff in the system.
      */
     @GetMapping
     public List<Staff> getAllTeacher() {

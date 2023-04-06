@@ -1,5 +1,6 @@
 package com.example.IMS_UI_API.controller;
 
+
 import com.example.IMS_UI_API.model.Student;
 import com.example.IMS_UI_API.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,16 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/students")
+@RequestMapping(path = "api/students")
 /**
- *
- * This class represents the controller for managing the students of an institute.
+ This class represents the controller for managing the students of an institute.
  */
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class StudentController {
     @Autowired
     StudentService studentService;
-
     /**
      * Retrieves a list of all students.
      *
@@ -35,7 +34,7 @@ public class StudentController {
      * @return A Student object representing the student with the given ID.
      */
     @GetMapping(path = "/{id}")
-    public Student getStudentById(@PathVariable(name = "id") int id) {
+    public Student getAllStudent(@PathVariable(name = "id") int id) {
         return studentService.getStudent(id);
     }
 
@@ -61,10 +60,9 @@ public class StudentController {
     @PutMapping(path = "/{id}")
     public Student updateStudent(@PathVariable(name = "id") int id, @RequestBody Student currentStudent) {
         Student updateStudent = studentService.getStudent(id);
-        updateStudent.name=currentStudent.name;
-        updateStudent.email=currentStudent.email;
+        updateStudent.name = currentStudent.name;
+        updateStudent.email = currentStudent.email;
         updateStudent.phone=currentStudent.phone;
-
         return updateStudent;
     }
 
@@ -76,8 +74,9 @@ public class StudentController {
      */
     @DeleteMapping(path = "/{id}")
     public Student deleteStudent(@PathVariable(name = "id") int id) {
-        Student deletedStudent = studentService.getStudent(id);
+        Student deletesStudent = studentService.getStudent(id);
         studentService.deleteStudent(id);
-        return deletedStudent;
+        return deletesStudent;
     }
 }
+
