@@ -10,3 +10,8 @@
 2023-04-09 02:07:41.042 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
 2023-04-09 02:07:41.059 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
 2023-04-09 02:07:41.069 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Started ImsUiApiApplication in 2.394 seconds (process running for 4.17)
+2023-04-09 02:09:23.159 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-09 02:09:23.160 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-09 02:09:23.161 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-04-09 02:09:23.506 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-09 02:09:28.135 INFO  c.e.I.service.StudentService - Getting all student
