@@ -1,0 +1,140 @@
+2023-04-06 00:51:19.028 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Starting ImsUiApiApplication using Java 17.0.2 with PID 13656 (C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API\target\classes started by ICT-Lap in C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API)
+2023-04-06 00:51:19.031 INFO  c.e.IMS_UI_API.ImsUiApiApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-06 00:51:20.219 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-06 00:51:20.231 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-06 00:51:20.232 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-06 00:51:20.232 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06 00:51:20.345 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-06 00:51:20.346 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1266 ms
+2023-04-06 00:51:20.772 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6ca30b8a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a92c6a9, org.springframework.security.web.context.SecurityContextHolderFilter@63d5874f, org.springframework.security.web.header.HeaderWriterFilter@38f77cd9, org.springframework.web.filter.CorsFilter@5c9934da, org.springframework.security.web.authentication.logout.LogoutFilter@3456558, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@261db982, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5984feef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c0905f6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4cb702ce, org.springframework.security.web.access.ExceptionTranslationFilter@43acd79e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@51a18b21]
+2023-04-06 00:51:20.876 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-04-06 00:51:20.894 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-06 00:51:20.904 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Started ImsUiApiApplication in 2.183 seconds (process running for 2.69)
+2023-04-06 00:51:36.413 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-06 00:51:36.414 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-06 00:51:36.417 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-04-06 00:51:36.795 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 00:52:08.597 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 00:52:14.819 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 00:52:19.755 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: "login"]
+2023-04-06 06:59:06.837 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 07:00:23.940 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.IMS_UI_API.ImsUiApiApplicationTests]: ImsUiApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-04-06 07:00:24.228 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.IMS_UI_API.ImsUiApiApplication for test class com.example.IMS_UI_API.ImsUiApiApplicationTests
+2023-04-06 07:00:25.149 INFO  c.e.I.ImsUiApiApplicationTests - Starting ImsUiApiApplicationTests using Java 17.0.2 with PID 14724 (started by ICT-Lap in C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API)
+2023-04-06 07:00:25.150 INFO  c.e.I.ImsUiApiApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2023-04-06 07:00:27.737 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6d6d480c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e95595b, org.springframework.security.web.context.SecurityContextHolderFilter@6f8aba08, org.springframework.security.web.header.HeaderWriterFilter@48eb001a, org.springframework.web.filter.CorsFilter@5a917723, org.springframework.security.web.authentication.logout.LogoutFilter@470d183, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5f5effb0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52b3bf03, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7cca01a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e4579c7, org.springframework.security.web.access.ExceptionTranslationFilter@5f96f6a2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a49af50]
+2023-04-06 07:00:28.016 INFO  c.e.I.ImsUiApiApplicationTests - Started ImsUiApiApplicationTests in 3.341 seconds (process running for 5.842)
+2023-04-06 07:01:30.837 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.IMS_UI_API.ImsUiApiApplicationTests]: ImsUiApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-04-06 07:01:30.930 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.IMS_UI_API.ImsUiApiApplication for test class com.example.IMS_UI_API.ImsUiApiApplicationTests
+2023-04-06 07:01:31.347 INFO  c.e.I.ImsUiApiApplicationTests - Starting ImsUiApiApplicationTests using Java 17.0.2 with PID 17652 (started by ICT-Lap in C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API)
+2023-04-06 07:01:31.348 INFO  c.e.I.ImsUiApiApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2023-04-06 07:01:32.797 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@20a967fe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@405b6d75, org.springframework.security.web.context.SecurityContextHolderFilter@1dd74143, org.springframework.security.web.header.HeaderWriterFilter@c386958, org.springframework.web.filter.CorsFilter@682abca7, org.springframework.security.web.authentication.logout.LogoutFilter@7beae796, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6a916402, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3166f664, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47ac613b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d858300, org.springframework.security.web.access.ExceptionTranslationFilter@3bec5821, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5edacf20]
+2023-04-06 07:01:33.075 INFO  c.e.I.ImsUiApiApplicationTests - Started ImsUiApiApplicationTests in 1.982 seconds (process running for 3.146)
+2023-04-06 07:01:54.279 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Starting ImsUiApiApplication using Java 17.0.2 with PID 18336 (C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API\target\classes started by ICT-Lap in C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API)
+2023-04-06 07:01:54.282 INFO  c.e.IMS_UI_API.ImsUiApiApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-06 07:01:55.515 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-06 07:01:55.535 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-06 07:01:55.537 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-06 07:01:55.538 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06 07:01:55.662 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-06 07:01:55.662 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1331 ms
+2023-04-06 07:01:56.073 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3eb292cd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7fd987ef, org.springframework.security.web.context.SecurityContextHolderFilter@11eed657, org.springframework.security.web.header.HeaderWriterFilter@2be95d31, org.springframework.web.filter.CorsFilter@7209ffb5, org.springframework.security.web.authentication.logout.LogoutFilter@52d6d273, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6949e948, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19a31b9d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a5bbaec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e99b9c, org.springframework.security.web.access.ExceptionTranslationFilter@68ee3b6d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55651434]
+2023-04-06 07:01:56.177 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-04-06 07:01:56.230 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-06 07:01:56.244 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Started ImsUiApiApplication in 2.341 seconds (process running for 2.884)
+2023-04-06 07:07:12.564 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-06 07:07:12.565 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-06 07:07:12.568 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-04-06 07:07:13.360 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 07:07:20.956 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 07:07:52.648 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 07:08:10.413 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Starting ImsUiApiApplication using Java 17.0.2 with PID 13292 (C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API\target\classes started by ICT-Lap in C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API)
+2023-04-06 07:08:10.416 INFO  c.e.IMS_UI_API.ImsUiApiApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-06 07:08:11.642 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-06 07:08:11.667 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-06 07:08:11.670 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-06 07:08:11.671 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06 07:08:11.828 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-06 07:08:11.829 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1355 ms
+2023-04-06 07:08:12.309 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2db33feb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30c3ae63, org.springframework.security.web.context.SecurityContextHolderFilter@1e1b061, org.springframework.security.web.header.HeaderWriterFilter@3b705be7, org.springframework.web.filter.CorsFilter@58658f63, org.springframework.security.web.authentication.logout.LogoutFilter@58015e56, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6b63e6ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a8e6e89, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6fbb4061, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54e12f4c, org.springframework.security.web.access.ExceptionTranslationFilter@2ff7a73, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2935fd2c]
+2023-04-06 07:08:12.423 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-04-06 07:08:12.475 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-06 07:08:12.493 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Started ImsUiApiApplication in 2.458 seconds (process running for 3.107)
+2023-04-06 07:08:21.661 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-06 07:08:21.663 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-06 07:08:21.665 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-04-06 07:08:22.410 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 07:09:30.089 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Starting ImsUiApiApplication using Java 17.0.2 with PID 4224 (C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API\target\classes started by ICT-Lap in C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API)
+2023-04-06 07:09:30.092 INFO  c.e.IMS_UI_API.ImsUiApiApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-06 07:09:31.298 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-06 07:09:31.306 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-06 07:09:31.307 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-06 07:09:31.307 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06 07:09:31.400 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-06 07:09:31.400 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1253 ms
+2023-04-06 07:09:31.839 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@20eaeaf8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@748ac6f3, org.springframework.security.web.context.SecurityContextHolderFilter@4667c4c1, org.springframework.security.web.header.HeaderWriterFilter@49f40c00, org.springframework.web.filter.CorsFilter@68f6e55d, org.springframework.security.web.authentication.logout.LogoutFilter@6c0905f6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@51a18b21, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22c75c01, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46e64760, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6fff46bf, org.springframework.security.web.access.ExceptionTranslationFilter@462e1e64, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@66f28a1f]
+2023-04-06 07:09:31.948 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-04-06 07:09:31.966 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-06 07:09:31.975 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Started ImsUiApiApplication in 2.214 seconds (process running for 2.713)
+2023-04-06 07:09:46.471 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-06 07:09:46.472 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-06 07:09:46.473 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2023-04-06 07:10:07.238 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Starting ImsUiApiApplication using Java 17.0.2 with PID 10500 (C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API\target\classes started by ICT-Lap in C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API)
+2023-04-06 07:10:07.241 INFO  c.e.IMS_UI_API.ImsUiApiApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-06 07:10:08.450 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-06 07:10:08.458 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-06 07:10:08.459 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-06 07:10:08.459 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06 07:10:08.548 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-06 07:10:08.549 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1263 ms
+2023-04-06 07:10:09.000 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2db1b657, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e351d7, org.springframework.security.web.context.SecurityContextHolderFilter@38830ea, org.springframework.security.web.header.HeaderWriterFilter@485e13d7, org.springframework.web.filter.CorsFilter@43c57161, org.springframework.security.web.authentication.logout.LogoutFilter@590adb41, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6a756082, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a790e40, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@43acd79e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d902300, org.springframework.security.web.access.ExceptionTranslationFilter@70d63e05, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@eb6ec6]
+2023-04-06 07:10:09.102 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-04-06 07:10:09.119 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-06 07:10:09.128 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Started ImsUiApiApplication in 2.233 seconds (process running for 2.782)
+2023-04-06 07:10:19.270 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-06 07:10:19.271 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-06 07:10:19.275 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2023-04-06 07:10:22.790 WARN  o.s.web.servlet.PageNotFound - No mapping for GET /api/student
+2023-04-06 07:10:28.471 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 07:10:41.397 INFO  c.e.IMS_UI_API.service.StaffService - Get all staff
+2023-04-06 07:10:59.539 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 07:29:57.880 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Starting ImsUiApiApplication using Java 17.0.2 with PID 18316 (C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API\target\classes started by ICT-Lap in C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API)
+2023-04-06 07:29:57.882 INFO  c.e.IMS_UI_API.ImsUiApiApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-06 07:29:59.045 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-06 07:29:59.054 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-06 07:29:59.055 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-06 07:29:59.055 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06 07:29:59.166 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-06 07:29:59.166 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1232 ms
+2023-04-06 07:29:59.610 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@d902300, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2db33feb, org.springframework.security.web.context.SecurityContextHolderFilter@3a790e40, org.springframework.security.web.header.HeaderWriterFilter@2ff7a73, org.springframework.web.filter.CorsFilter@30c3ae63, org.springframework.security.web.authentication.logout.LogoutFilter@43bf5397, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1f3b992, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e1b061, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@38f77cd9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58658f63, org.springframework.security.web.access.ExceptionTranslationFilter@485e13d7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@18137eab]
+2023-04-06 07:29:59.722 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-04-06 07:29:59.738 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-06 07:29:59.748 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Started ImsUiApiApplication in 2.199 seconds (process running for 2.739)
+2023-04-06 07:30:59.883 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-06 07:30:59.885 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-06 07:30:59.888 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2023-04-06 07:31:00.605 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 07:31:07.634 INFO  c.e.I.service.StudentService - Created student with id: 1
+2023-04-06 07:34:15.002 WARN  o.s.web.servlet.PageNotFound - No mapping for GET /login
+2023-04-06 07:34:22.580 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 08:13:27.855 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 08:14:22.250 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 08:14:24.223 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 08:16:36.310 INFO  c.e.I.service.StudentService - Created student with id: 2
+2023-04-06 08:17:00.393 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 08:33:15.834 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 09:20:18.521 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 09:26:51.861 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 09:29:07.232 INFO  c.e.I.service.StudentService - Getting all student
+2023-04-06 09:34:56.843 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Starting ImsUiApiApplication using Java 17.0.2 with PID 11016 (C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API\target\classes started by ICT-Lap in C:\Users\ICT-Lap\IdeaProjects\IMS_UI_API)
+2023-04-06 09:34:56.847 INFO  c.e.IMS_UI_API.ImsUiApiApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-06 09:34:58.220 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-06 09:34:58.233 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-06 09:34:58.234 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-06 09:34:58.235 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-06 09:34:58.346 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-06 09:34:58.347 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1431 ms
+2023-04-06 09:34:58.817 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2db33feb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30c3ae63, org.springframework.security.web.context.SecurityContextHolderFilter@43acd79e, org.springframework.security.web.header.HeaderWriterFilter@38830ea, org.springframework.web.filter.CorsFilter@58658f63, org.springframework.security.web.authentication.logout.LogoutFilter@575e572f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2a53f215, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38f77cd9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a8e6e89, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54e12f4c, org.springframework.security.web.access.ExceptionTranslationFilter@43984213, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@727320fa]
+2023-04-06 09:34:58.951 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-04-06 09:34:58.972 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-06 09:34:58.983 INFO  c.e.IMS_UI_API.ImsUiApiApplication - Started ImsUiApiApplication in 2.712 seconds (process running for 3.539)

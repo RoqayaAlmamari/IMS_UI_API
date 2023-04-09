@@ -29,64 +29,175 @@ passwordInput.addEventListener('input', function() {
   passwordError.textContent = '';
 });
 
-    const storedUsername = localStorage.getItem("username");
-    const storedPassword = localStorage.getItem("password");
+-------add students
+$(document).ready(function() {
+    // Add event listener for the "Add Student" button
+    $("#addStudentBtn").click(function() {
+        // Get the input values from the form
+        var name = $("#studentName").val();
+        var email = $("#studentEmail").val();
+        var phone = $("#studentPhone").val();
 
-    document.getElementById("addStudentForm").addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const phone = document.getElementById("phone").value;
-
-        const url = "http://localhost:8080/api/students";
-
-        const reqConfig = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json;charset=UTF-8",
-                "Authorization": "Basic " + btoa(storedUsername + ":" + storedPassword)
-            },
-            body: JSON.stringify({
-                Studentname: name,
-                Studentemail: email,
-                Studentphone: phone
-            })
+        // Create an object with the student data
+        var studentData = {
+            "name": name,
+            "email": email,
+            "phone": phone
         };
 
-        fetch(url, reqConfig)
-            .then((response) => {
-                if (response.ok) {
-                    alert(`Student created successfully.`);
-                } else {
-                    alert(`Failed to create student.`);
-                }
-            })
-            .then((parsedResponse) => {
-                console.log(parsedResponse);
-                document.getElementById("addStudentForm").reset();
-                $('#addStudentModal').modal('hide');
-            });
+        // Send a POST request to the backend API
+        $.ajax({
+            url: "/api/students",
+            type: "POST",
+            headers: {
+                "Authorization": "Basic " + btoa("admin:admin")
+            },
+            data: JSON.stringify(studentData),
+            contentType: "application/json",
+            success: function(data) {
+                // Append the new student row to the table
+                var newRow = $("<tr>")
+                    .append($("<td>").text(data.id))
+                    .append($("<td>").text(data.name))
+                    .append($("<td>").text(data.email))
+                    .append($("<td>").text(data.phone))
+                    .append($("<td>")
+                        .append($("<button>")
+                            .addClass("btn btn-sm btn-info mr-2")
+                            .attr("data-toggle", "modal")
+                            .attr("data-target", "#editStudentModal")
+                            .text("Edit")
+                        )
+                        .append($("<button>")
+                            .addClass("btn btn-sm btn-danger")
+                            .attr("data-toggle", "modal")
+                            .attr("data-target", "#deleteStudentModal")
+                            .text("Delete")
+                        )
+                    );
+                $("table tbody").append(newRow);
+
+                // Reset the form inputs
+                $("#studentName").val("");
+                $("#studentEmail").val("");
+                $("#studentPhone").val("");
+
+                // Hide the modal
+                $("#addStudentModal").modal("hide");
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                console.log(xhr.responseText);
+            }
+        });
     });
-
-// Select the navbar element
-const navbar = document.querySelector('.navbar-nav');
-
-// Create a new li element for the logout button
-const logoutLi = document.createElement('li');
-logoutLi.classList.add('nav-item');
-
-// Create a new a element for the logout button
-const logoutLink = document.createElement('a');
-logoutLink.classList.add('nav-link');
-logoutLink.href = 'login.html';
-logoutLink.innerText = 'Logout';
-
-// Append the link to the li element and the li element to the navbar
-logoutLi.appendChild(logoutLink);
-navbar.appendChild(logoutLi);
-
-// Add a click event listener to the logout button
-logoutLink.addEventListener('click', function() {
-  // Perform logout actions here
 });
+
+---edit
+
+$(document).ready(function() {
+    // Set up event listener for save changes button
+    $("#saveChangesBtn").click(function() {
+        // Get the form data
+        var studentData = {
+            id: $("#editStudentId").val(),
+            name: $("#editStudentName").val(),
+            email: $("#editStudentEmail").val(),
+            phone: $("#editStudentPhone").val()
+        };
+        // Send the AJAX request
+        $.ajax({
+            url: "/api/students",
+            type: "POST",
+            headers: {
+                "Authorization": "Basic " + btoa("admin:admin")
+            },
+            contentType: "application/json",
+            data: JSON.stringify(studentData),
+            success: function(response) {
+                // Update the table row with the new data
+                $("#studentRow-" + studentData.id).find(".name").text(studentData.name);
+                $("#studentRow-" + studentData.id).find(".email").text(studentData.email);
+                $("#studentRow-" + studentData.id).find(".phone").text(studentData.phone);
+                // Hide the modal
+                $("#editStudentModal").modal("hide");
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log("Error updating student: " + errorThrown);
+            }
+        });
+    });
+});
+
+---del--
+
+// Set up the basic authentication credentials
+var username = 'admin';
+var password = 'admin';
+
+// Set up the data to send in the POST request
+ var name = $("#studentName").val();
+        var email = $("#studentEmail").val();
+        var phone = $("#studentPhone").val();
+
+        // Create an object with the student data
+        var studentData = {
+            "name": name,
+            "email": email,
+            "phone": phone
+        };
+
+// Send the POST request with jQuery
+$.ajax({
+  url: '/api/students',
+  method: 'POST',
+  headers: {
+    'Authorization': 'Basic ' + btoa(username + ':' + password)
+  },
+  data: JSON.stringify(data),
+  contentType: 'application/json',
+  success: function(response) {
+    // The API successfully added the data
+    console.log('Data added successfully');
+  },
+  error: function(xhr, status, error) {
+    // There was an error adding the data
+    console.log('Error adding data: ' + error);
+  }
+});
+
+--import--
+// get the import button
+const importBtn = document.getElementById('importBtn');
+
+// add a click event listener to the import button
+importBtn.addEventListener('click', () => {
+  // send a POST request to your Spring Boot API using fetch API
+  fetch('/api/students', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Basic ' + btoa('admin:admin') // replace with your own username and password
+    },
+    body: JSON.stringify({
+      // add any data you want to send with the request
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      // if the request is successful, update the table
+      updateTable();
+    } else {
+      // handle the error
+      console.error('Error importing students:', response.statusText);
+    }
+  })
+  .catch(error => {
+    console.error('Error importing students:', error);
+  });
+});
+
+function updateTable() {
+  // update the table using JavaScript DOM manipulation
+}
+
+
